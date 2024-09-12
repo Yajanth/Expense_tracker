@@ -16,6 +16,18 @@ def main():
 
 def get_user_expense():
     print("Getting user expense:")
+    expense_categories=[
+        "🍎Food",
+        "🏠Home",
+        "💻Work",
+        "🎉Fun",
+        "🌠Misc"
+    ]
+    while True:
+        print("Select your Expense Category: \n------------------------------------")
+
+    expense_name=input("Enter the Expense Name:")
+    expense_amount=float(input("Enter the amount:"))
 
 def write_expense_to_file():
     print("Updating the expenses:")

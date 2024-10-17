@@ -5,10 +5,10 @@ def main():
 
     #Choose the options below
     expense=get_user_expense()
-    print(expense)
+    file_path="Expense.csv"
 
     #write those to csv
-    write_expense_to_file()
+    write_expense_to_file(expense,file_path )
  
     #read file and summarize the expense
     summarize_expenses()
@@ -28,7 +28,7 @@ def get_user_expense():
     while True:
         print("Select your Expense Category: \n------------------------------------")
         for i , category in enumerate(expense_categories):
-            print(f"{i+1}. {category}")
+            print(f"{i+1}. {category}") 
 
         value_range=f"[1 - {len(expense_categories)}]"
         selected_index=int(input(f"Select a category {value_range}:")) -1
@@ -41,8 +41,11 @@ def get_user_expense():
 
 
 
-def write_expense_to_file():
-    print("🎯Updating the expenses:")
+def write_expense_to_file(expense:Expense, file_path):
+    print(f"🎯Updating the expense{expense} to {file_path} :")
+
+    with open(file_path,"a") as f:
+        f.write(f"{expense.name},{expense.category},{expense.amount} \n")
 
 def summarize_expenses():
     print("🎯Summary of the expenses:")

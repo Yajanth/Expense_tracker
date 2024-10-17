@@ -28,8 +28,11 @@ def get_user_expense():
             print(f"{i+1}. {category}")
 
         value_range=f"[1 - {len(expense_categories)}]"
-        category_num=int(input(f"Select a category {value_range}:")) -1
-        break
+        selected_category=int(input(f"Select a category {value_range}:")) -1
+        if selected_category in range(len(expense_categories)):
+            break
+        else:
+            print("Invalid Category. Plase try again!")
 
 
 

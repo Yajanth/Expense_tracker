@@ -6,12 +6,12 @@ def main():
     print(f"***Running expense tracker****:")
 
     #Choose the options below
-    # -----expense=get_user_expense()
+    expense=get_user_expense()
     file_path="Expense.csv"
     month_budget=2000
 
     #write those to csv
-    #------write_expense_to_file(expense,file_path )
+    write_expense_to_file(expense,file_path )
  
     #read file and summarize the expense
     summarize_expenses(file_path,month_budget)

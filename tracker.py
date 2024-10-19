@@ -28,7 +28,7 @@ def get_user_expense():
     while True:
         print("Select your Expense Category: \n------------------------------------")
         for i , category in enumerate(expense_categories):
-            print(f"{i+1}. {category}") 
+            print(f"{i+1}. {category}")
 
         value_range=f"[1 - {len(expense_categories)}]"
         selected_index=int(input(f"Select a category {value_range}:")) -1
